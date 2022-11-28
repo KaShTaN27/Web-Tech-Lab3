@@ -1,5 +1,6 @@
 package by.bsuir.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
@@ -19,6 +20,7 @@ import static jakarta.persistence.FetchType.EAGER;
 @NoArgsConstructor
 public class StudentInfoAccess {
 
+    @JsonIgnore
     @EmbeddedId
     StudentInfoAccessKey id;
 
@@ -27,6 +29,7 @@ public class StudentInfoAccess {
     @JoinColumn(name = "student_info_id")
     private StudentInfo studentInfo;
 
+    @JsonIgnore
     @ManyToOne(fetch = EAGER)
     @MapsId("employeeId")
     @JoinColumn(name = "employee_id")
