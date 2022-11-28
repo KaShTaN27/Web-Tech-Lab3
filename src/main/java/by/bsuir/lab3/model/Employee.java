@@ -1,5 +1,6 @@
 package by.bsuir.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,6 +34,7 @@ public class Employee {
 
     private String email;
 
+    @JsonIgnore
     private String password;
 
     @Enumerated(value = STRING)
