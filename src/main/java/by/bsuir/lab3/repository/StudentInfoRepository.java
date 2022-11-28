@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentInfoRepository extends JpaRepository<StudentInfo, Long> {
-
+    boolean existsByNameAndSurnameAndPatronymic(String name, String surname, String patronymic);
 }
